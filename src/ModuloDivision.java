@@ -1,20 +1,23 @@
-import java.util.Scanner;
+import javax.swing.*;
 
 public class ModuloDivision {
-    public static void main(String[] args) {
-        Scanner inputStream = new Scanner(System.in);
-        int number;
-        int sum = 0;
+// Written by: Mike Baldwin
+// Takes a user inputted triple number and adds prints the sum of the digits
 
-        System.out.print("Enter an integer: ");
-        number = inputStream.nextInt();
+public static void main(String[] args) {
+    String tempString;
+    int number, sum, digit;
 
-        while (number > 0) {
-            int digit = number % 10;
-            number /= 10;
-            sum += digit;
-        }
+    tempString = JOptionPane.showInputDialog("Enter an integer");
+    number = Integer.parseInt(tempString);
+    sum = 0;
 
-        System.out.println("The sum of the digits is: " + sum);
+    while (number > 0) {
+        digit = number % 10;
+        number /= 10;
+        sum += digit;
     }
+
+    JOptionPane.showMessageDialog(null, "The sum of the digits is: " + sum);
+}
 }
